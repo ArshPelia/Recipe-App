@@ -16,13 +16,21 @@ const App = () =>{
     }, [query]);
 
   const getRecipes = async () => {
-    const response = await fetch(
-      `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`);
-    const data = await response.json();
-    setRecipes(data.hits)
-    console.log(data.hits)
+    try {
+      const response = await fetch(
+        `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch recipes');
+      }
+      const data = await response.json();
+      setRecipes(data.hits)
+      console.log(data.hits)
+    } catch (error) {
+      console.error(error);
+      // handle the error, e.g. display an error message to the user
+    }
   }
-
+  
   const updateSearch = e => {
     setSearch(e.target.value)
     console.log(search)
