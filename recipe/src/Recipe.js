@@ -2,7 +2,7 @@ import React,  {useState} from "react";
 import Modal from 'react-modal';
 import './recipe.css'
 
-const Recipe = ({title, calories, image, ingredients}) => {
+const Recipe = ({title, calories, image, ingredients, dishType}) => {
 
     const [modalIsOpen, setModalIsOpen] = useState(null);
   
@@ -21,7 +21,7 @@ const Recipe = ({title, calories, image, ingredients}) => {
                 </div>
 
                 <h3>{title}</h3>
-                <h4>{calories}</h4>
+                <h4>Calories: {calories}</h4>
 
                 <div className='recipe__item-cta'>
 				  <a href='#' onClick={() => openModal(title)} className='btn'>
@@ -38,7 +38,7 @@ const Recipe = ({title, calories, image, ingredients}) => {
 							<h2 className='modal-title'>{title}</h2>
 						</div>
 						<div className='modal-body'>
-							<h4 className='modal-lang'>{title}</h4>
+							<h4 className='modal-lang'>{dishType}</h4>
                             <ol>
                                 {ingredients.map(ingredient => (
                                     <li>{ingredient.text}</li>
