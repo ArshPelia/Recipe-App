@@ -73,7 +73,8 @@ body{
     line-height: 1.7;
     /* background-image: url('./assets/pics/bg-texture.png'); OG */ 
     /* background-image: url('./assets/pics/denim.png'); */
-    background-color: #e5e5f7;
+    background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
+
 
 }
 
@@ -168,4 +169,22 @@ img{
     section > h2{
         margin-bottom: 2rem;
     }
+}
+
+/* --------------------FORM--------------------- */
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+input, textarea{
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background: transparent;
+    border: 2px solid var(--color-primary-variant);
+    resize: none;
+    color: black;
 }
