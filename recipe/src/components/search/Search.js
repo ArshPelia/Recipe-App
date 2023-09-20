@@ -43,7 +43,7 @@ const Search = () =>{
   }
   
   return(
-    <div className="search">
+    <div className="container">
       <form className='search-form' onSubmit={getSearch}>
         <input className='search-bar' type="text" value={search} onChange={updateSearch}/>
         <button className='btn' type='submit'>
