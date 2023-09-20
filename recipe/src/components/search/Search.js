@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
-import './App.css';
-import Recipe from "./Recipe";
+import './search.css';
+import Recipe from "../recipe/Recipe";
 
-const App = () =>{
+const Search = () =>{
 
   const APP_ID = process.env.REACT_APP_EDEMAM_APP_ID;
   const APP_KEY = process.env.REACT_APP_EDEMAM_APP_KEY;
@@ -43,7 +43,7 @@ const App = () =>{
   }
   
   return(
-    <div className="App">
+    <div className="search">
       <form className='search-form' onSubmit={getSearch}>
         <input className='search-bar' type="text" value={search} onChange={updateSearch}/>
         <button className='btn' type='submit'>
@@ -68,4 +68,4 @@ const App = () =>{
   );
 };
 
-export default App;
+export default Search;
