@@ -70,18 +70,18 @@ const Search = () => {
           <button className='btn' type='submit'>
             Search
           </button>
-          <div>
-            <label htmlFor="healthFilter">Health Filter:</label>
-            <select id="healthFilter" onChange={handleHealthFilterChange} value={healthFilter}>
+          <div className="filter-container">
+            <label className="filter-label" htmlFor="healthFilter">Health Filter: </label>
+            <select id="healthFilter" className="filter-select" onChange={handleHealthFilterChange} value={healthFilter}>
               <option value="">Any</option>
               <option value="vegan">Vegan</option>
               <option value="vegetarian">Vegetarian</option>
               {/* Add more health filter options as needed */}
             </select>
           </div>
-          <div>
-            <label htmlFor="dietFilter">Diet Filter:</label>
-            <select id="dietFilter" onChange={handleDietFilterChange} value={dietFilter}>
+          <div className="filter-container">
+            <label className="filter-label" htmlFor="dietFilter">Diet Filter: </label>
+            <select id="dietFilter" className="filter-select" onChange={handleDietFilterChange} value={dietFilter}>
               <option value="">Any</option>
               <option value="low-carb">Low Carb</option>
               <option value="high-protein">High Protein</option>
