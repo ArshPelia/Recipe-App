@@ -47,3 +47,37 @@ input, textarea{
     resize: none;
     color: black;
 }
+
+/* Add your existing styles here */
+
+/* Filter container */
+.filter-container {
+  margin-top: 10px;
+}
+
+/* Filter label */
+.filter-label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* Filter select element */
+.filter-select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Apply styles to the button */
+.btn {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Add more styles as needed */
