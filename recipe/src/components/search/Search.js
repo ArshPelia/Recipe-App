@@ -63,46 +63,46 @@ const Search = () => {
 
   return (
     <section>
-    <div className="container">
-      <form className='search-form' onSubmit={getSearch}>
-        <input className='search-bar' type="text" value={search} onChange={updateSearch} />
-        <button className='btn' type='submit'>
-          Search
-        </button>
-        <div>
-          <label htmlFor="healthFilter">Health Filter:</label>
-          <select id="healthFilter" onChange={handleHealthFilterChange} value={healthFilter}>
-            <option value="">Any</option>
-            <option value="vegan">Vegan</option>
-            <option value="vegetarian">Vegetarian</option>
-            {/* Add more health filter options as needed */}
-          </select>
-        </div>
-        <div>
-          <label htmlFor="dietFilter">Diet Filter:</label>
-          <select id="dietFilter" onChange={handleDietFilterChange} value={dietFilter}>
-            <option value="">Any</option>
-            <option value="low-carb">Low Carb</option>
-            <option value="high-protein">High Protein</option>
-            {/* Add more diet filter options as needed */}
-          </select>
-        </div>
-      </form>
-      <section id='recipe'>
-        <div className='container recipe__container'>
-          {recipes.map(recipe => (
-            <Recipe
-              key={recipe.recipe.label}
-              title={recipe.recipe.label} 
-              calories={Math.round(recipe.recipe.calories)}
-              image={recipe.recipe.image}
-              ingredients={recipe.recipe.ingredients}
-              dishType={recipe.recipe.dishType}
-            />
-          ))}
-        </div>
-      </section>
-    </div>
+      <div className="container">
+        <form className='search-form' onSubmit={getSearch}>
+          <input className='search-bar' type="text" value={search} onChange={updateSearch} />
+          <button className='btn' type='submit'>
+            Search
+          </button>
+          <div>
+            <label htmlFor="healthFilter">Health Filter:</label>
+            <select id="healthFilter" onChange={handleHealthFilterChange} value={healthFilter}>
+              <option value="">Any</option>
+              <option value="vegan">Vegan</option>
+              <option value="vegetarian">Vegetarian</option>
+              {/* Add more health filter options as needed */}
+            </select>
+          </div>
+          <div>
+            <label htmlFor="dietFilter">Diet Filter:</label>
+            <select id="dietFilter" onChange={handleDietFilterChange} value={dietFilter}>
+              <option value="">Any</option>
+              <option value="low-carb">Low Carb</option>
+              <option value="high-protein">High Protein</option>
+              {/* Add more diet filter options as needed */}
+            </select>
+          </div>
+        </form>
+        <section id='recipe'>
+          <div className='container recipe__container'>
+            {recipes.map(recipe => (
+              <Recipe
+                key={recipe.recipe.label}
+                title={recipe.recipe.label} 
+                calories={Math.round(recipe.recipe.calories)}
+                image={recipe.recipe.image}
+                ingredients={recipe.recipe.ingredients}
+                dishType={recipe.recipe.dishType}
+              />
+            ))}
+          </div>
+        </section>
+      </div>
     </section>
   );
 };
