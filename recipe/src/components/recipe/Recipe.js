@@ -2,7 +2,7 @@ import React,  {useState} from "react";
 import Modal from 'react-modal';
 import './recipe.css'
 
-const Recipe = ({title, calories, image, ingredients, dishType}) => {
+const Recipe = ({title, calories, image, ingredients, dishType, direction}) => {
 
     const [modalIsOpen, setModalIsOpen] = useState(null);
   
@@ -13,6 +13,17 @@ const Recipe = ({title, calories, image, ingredients, dishType}) => {
 	const closeModal = () => {
 	  setModalIsOpen(null);
 	};
+
+	const openDirections = () => {
+		// Log the URL to verify its value
+		console.log("URL:", direction);
+	  
+		// Open the directions URL in a new tab
+		if (direction) {
+		  window.open(direction, "_blank");
+		}
+	  };
+	  
 
     return(
 			<article className='recipe__item'>
@@ -27,6 +38,9 @@ const Recipe = ({title, calories, image, ingredients, dishType}) => {
 				  <a href='#' onClick={() => openModal(title)} className='btn'>
 					View Ingredients
 				  </a>
+				  <button onClick={openDirections} className='btn'>
+						View Directions
+				 </button>
 				  <Modal
 					isOpen={modalIsOpen === title}
 					onRequestClose={closeModal}

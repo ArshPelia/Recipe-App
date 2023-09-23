@@ -36,6 +36,7 @@ const Search = () => {
       }
 
       const data = await response.json();
+      console.log(data.hits)
       setRecipes(data.hits);
     } catch (error) {
       console.error(error);
@@ -98,6 +99,7 @@ const Search = () => {
                 image={recipe.recipe.image}
                 ingredients={recipe.recipe.ingredients}
                 dishType={recipe.recipe.dishType}
+                direction={recipe.recipe.url}
               />
             ))}
           </div>
