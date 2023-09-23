@@ -1,13 +1,16 @@
 import React from 'react'
 import Search from './components/search/Search'
-// https://www.youtube.com/watch?v=G-Cr00UYokU @2:40:12
-
+/**
+ * Renders the `Search` component.
+ *
+ * @returns {JSX.Element} The rendered `Search` component.
+ */
 const App = () => {
   return (
     <>
       <Search/>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
