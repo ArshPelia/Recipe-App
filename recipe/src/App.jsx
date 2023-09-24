@@ -1,5 +1,6 @@
 import React from 'react'
 import Search from './components/search/Search'
+import Header from './components/header/Header'
 /**
  * Renders the `Search` component.
  *
@@ -8,6 +9,7 @@ import Search from './components/search/Search'
 const App = () => {
   return (
     <>
+      <Header/>
       <Search/>
     </>
   );
