@@ -1,41 +1,52 @@
-.recipe__container{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+/* Update your recipe.css styles */
+.recipe__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 5rem; /* Add top margin to match other sections */
+  padding: 2rem; /* Add padding for consistency */
 }
 
-.recipe__item{
-    background: var(--color-bg-variant);
-    padding: 1.3rem;
-    border-radius: 2rem;
-    border: 1px solid transparent;
-    transition: var(--transition);
+.recipe__item {
+  background: var(--color-bg-variant);
+  border-radius: 2rem;
+  border: 1px solid transparent;
+  transition: var(--transition);
+  padding: 1.3rem;
+  text-align: center; /* Center-align the content */
 }
 
-.recipe__item:hover{
-    border-color: var(--color-primary-variant);
-    background: transparent;
+.recipe__item:hover {
+  border-color: var(--color-primary-variant);
+  background: transparent;
 }
 
-.recipe__item-image{
-    border-radius: 1.5rem;
-    overflow: hidden;
-    height: 190px;
+.recipe__item-image {
+  border-radius: 1.5rem;
+  overflow: hidden;
+  height: 190px;
 }
 
-.recipe__item h3{
-    margin: 1.2rem 0 0rem;
+.recipe__item h3 {
+  margin: 1.2rem 0 0.5rem; /* Adjust margin for better spacing */
+  font-size: 1.5rem; /* Increase font size for better readability */
 }
 
-.recipe__item h4{
-    margin: 0.1rem 0 1rem;
-    color: var(--color-light);
+.recipe__item h4 {
+  margin: 0.1rem 0 1rem;
+  color: var(--color-light);
+  font-size: 1rem; /* Increase font size for better readability */
 }
 
-.recipe__item-cta{
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
+.recipe__item-cta {
+  display: flex;
+  flex-direction: column; /* Change to column layout for better alignment */
+  gap: 1rem;
+}
+
+/* Styles for the "View Ingredients" and "View Directions" buttons */
+.recipe__item-cta .btn {
+  width: 100%; /* Make the buttons take full width */
 }
 
 /* -----------------------MEDIA QUERIES (MEDIUM DEVICES) ---------------- */
