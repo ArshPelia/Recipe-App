@@ -11,10 +11,11 @@ const Search = () => {
   const [query, setQuery] = useState('chicken');
   const [healthFilter, setHealthFilter] = useState('');
   const [dietFilter, setDietFilter] = useState('');
+  const [mealTypeFilter, setMealTypeFilter] = useState('');
 
   useEffect(() => {
     getRecipes();
-  }, [query, healthFilter, dietFilter]);
+  }, [query, healthFilter, dietFilter, mealTypeFilter]);
 
   const getRecipes = async () => {
     try {
@@ -27,6 +28,10 @@ const Search = () => {
 
       if (dietFilter) {
         filterParams += `&diet=${dietFilter}`;
+      }
+
+      if (mealTypeFilter) {
+        filterParams += `&mealType=${mealTypeFilter}`;
       }
 
       const response = await fetch(url + filterParams);
@@ -62,6 +67,10 @@ const Search = () => {
     setDietFilter(e.target.value);
   }
 
+  const handleMealTypeFilterChange = (e) => {
+    setMealTypeFilter(e.target.value);
+  };
+  
   return (
     <section>
         <form className='search-form' onSubmit={getSearch}>
@@ -70,22 +79,37 @@ const Search = () => {
             Search
           </button>
           <div className="filter-container">
+
             <label className="filter-label" htmlFor="healthFilter">Health Filter: </label>
             <select id="healthFilter" className="filter-select" onChange={handleHealthFilterChange} value={healthFilter}>
               <option value="">Any</option>
               <option value="vegan">Vegan</option>
               <option value="vegetarian">Vegetarian</option>
+              <option value="dairy-free">Dairy Free</option>
+              <option value="sugar-conscious">Sugar Conscious</option>
               {/* Add more health filter options as needed */}
             </select>
-          </div>
-          <div className="filter-container">
+
             <label className="filter-label" htmlFor="dietFilter">Diet Filter: </label>
             <select id="dietFilter" className="filter-select" onChange={handleDietFilterChange} value={dietFilter}>
-              <option value="">Any</option>
-              <option value="low-carb">Low Carb</option>
+            <option value="">Any</option>
+              <option value="balanced">Balanced</option>
               <option value="high-protein">High Protein</option>
+              <option value="low-carb">Low Carb</option>
+              <option value="low-fat">Low Fat</option>
               {/* Add more diet filter options as needed */}
             </select>
+
+            <label className="filter-label" htmlFor="mealTypeFilter">Meal Filter: </label>
+            <select id="mealTypeFilter" className="filter-select" onChange={handleMealTypeFilterChange} value={mealTypeFilter}>
+            <option value="">Any</option>
+              <option value="breakfast">Breakfast</option>
+              <option value="lunch/dinner">Lunch / Dinner</option>
+              <option value="snack">Snack</option>
+              <option value="teatime">Teatime</option>
+              {/* Add more diet filter options as needed */}
+            </select>
+
           </div>
         </form>
         {/* <section id='recipe'> */}
