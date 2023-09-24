@@ -64,7 +64,6 @@ const Search = () => {
 
   return (
     <section>
-      <div className="container">
         <form className='search-form' onSubmit={getSearch}>
           <input className='search-bar' type="text" value={search} onChange={updateSearch} />
           <button className='btn' type='submit'>
@@ -89,7 +88,7 @@ const Search = () => {
             </select>
           </div>
         </form>
-        <section id='recipe'>
+        {/* <section id='recipe'> */}
           <div className='container recipe__container'>
             {recipes.map(recipe => (
               <Recipe
@@ -103,8 +102,7 @@ const Search = () => {
               />
             ))}
           </div>
-        </section>
-      </div>
+        {/* </section> */}
     </section>
   );
 };
